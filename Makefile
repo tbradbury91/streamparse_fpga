@@ -13,3 +13,6 @@ run: $(OUT)
 clean:
 	rm -f $(OUT)
 
+packet_parser_tb:
+	iverilog -g2012 -o sim/packet_parser_tb sim/packet_parser_tb.v src/packet_parser.v
+	vvp sim/packet_parser_tb
